@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Min;
@@ -43,6 +42,14 @@ public class Wallet {
 	
 	@JsonIgnore
 	@OneToMany
-	private List<Transaction> transactions;
+	private List<Transaction> transactions = new ArrayList<>();
+	
+	
+	@JsonIgnore
+	@OneToMany
+	private List<BillPayment> billPaymnets = new ArrayList<>();
+	
+	
+	
 	
 }
